@@ -22,16 +22,16 @@ for stock, qty in portfolio.items():
     value = price * qty
     total_value += value
     print(f"{stock}: ₹{price} × {qty} = ₹{value}")
-print(f"\n Total Investment: ₹{total_value}")
+print(f" Total Investment: ₹{total_value}")
 
 # Optional: File handling
 save = input("Do you want to save this to a file? (yes/no): ").lower()
 if save == 'yes':
     with open("portfolio_summary.txt", "w") as f:
-        f.write("Stock Portfolio Summary:\n")
+        f.write("Stock Portfolio Summary:")
         for stock, qty in portfolio.items():
             price = stock_prices[stock]
             value = price * qty
-            f.write(f"{stock}: ₹{price} × {qty} = ₹{value}\n")
-        f.write(f"\nTotal Investment: ₹{total_value}")
+            f.write(f"{stock}: ₹{price} × {qty} = ₹{value}")
+        f.write(f"Total Investment: ₹{total_value}")
     print("Summary saved to 'portfolio_summary.txt'")
